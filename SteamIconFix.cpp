@@ -284,11 +284,13 @@ int main() {
                 break;
             case 500 ...599:
                 logwrn(("Error" + to_string(res) + ", Server Error,please change cdn").c_str());
+                res = res ^ (0x8000);
                 break;
             default:
                 logerr(("E download failed. Check your network! Error " + to_string(res)).c_str());
+                res = res ^ (0x8000);
         }
-        if (res){
+        if (res>0x8000){
             logerr("E deleting downloaded files...");
             system(("del \"" + steamiconDir + "\\" + iconfile + "\"").c_str());
             system("pause");
