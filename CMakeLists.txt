@@ -20,3 +20,6 @@ target_link_libraries(SteamIconFix crypt32)
 target_link_libraries(SteamIconFix normaliz)
 target_link_libraries(SteamIconFix bcrypt)
 set(CMAKE_EXE_LINKER_FLAGS "-static")
+add_executable(SteamIconFix_C main.c
+        SteamIconFix_C.h
+        SteamIconFix_C.c)

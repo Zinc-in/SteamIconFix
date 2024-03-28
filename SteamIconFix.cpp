@@ -290,7 +290,7 @@ int main() {
         }
         if (res){
             logerr("E deleting downloaded files...");
-            system(("del \"" + iconfile + "\"").c_str());
+            system(("del \"" + steamiconDir + "\\" + iconfile + "\"").c_str());
             system("pause");
             exit(0);
         }
